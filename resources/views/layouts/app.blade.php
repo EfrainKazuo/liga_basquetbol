@@ -11,6 +11,9 @@
         <div class="container">
             <a class="navbar-brand" href="{{ route('dashboard') }}">🏀 Liga de Básquetbol</a>
             @auth
+                <a class="nav-link text-white me-auto ms-3" href="{{ route('equipos.index') }}">Equipos</a>
+            @endauth
+            @auth
                 <form method="POST" action="{{ route('logout') }}" class="d-flex align-items-center gap-3 mb-0">
                     @csrf
                     <span class="text-white">{{ auth()->user()->name }}</span>
