@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\JugadorController;
 use App\Http\Controllers\PartidoController;
+use App\Http\Controllers\EstadisticaController;
 
 Route::get('/', fn () => redirect()->route('dashboard'));
 
@@ -18,7 +19,8 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
+    Route::get('/dashboard', [EstadisticaController::class, 'dashboard'])->name('dashboard');
+    Route::get('/posiciones', [EstadisticaController::class, 'posiciones'])->name('posiciones');
     Route::resource('equipos.jugadores', JugadorController::class)
     
     ->shallow()
