@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
     Route::resource('equipos.jugadores', JugadorController::class)
+    
     ->shallow()
     ->except(['index', 'show'])
     ->parameters(['jugadores' => 'jugador']);
