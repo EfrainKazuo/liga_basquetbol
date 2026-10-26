@@ -11,15 +11,17 @@
 <div class="card shadow-sm">
     <div class="table-responsive">
         <table class="table table-hover align-middle mb-0">
-            <thead class="table-dark">
-                <tr>
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Ciudad</th>
-                    <th>Entrenador</th>
-                    <th class="text-end">Acciones</th>
-                </tr>
-            </thead>
+<thead class="table-dark">
+    <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Ciudad</th>
+        <th>Entrenador</th>
+        <th>Jugadores</th>
+        <th>Jugadores</th>   {{-- nueva --}}
+        <th class="text-end">Acciones</th>
+    </tr>
+</thead>
             <tbody>
                 @forelse ($equipos as $equipo)
                     <tr>
@@ -27,6 +29,10 @@
                         <td>{{ $equipo->nombre }}</td>
                         <td>{{ $equipo->ciudad }}</td>
                         <td>{{ $equipo->entrenador }}</td>
+                        <td>{{ $equipo->jugadores_count }}</td>
+                        <td>{{ $equipo->entrenador }}</td>
+                        <td>{{ $equipo->jugadores_count }}</td>   {{-- nueva --}}
+                        
                         <td class="text-end">
                             <a href="{{ route('equipos.show', $equipo) }}" class="btn btn-sm btn-outline-secondary">Ver</a>
                             <a href="{{ route('equipos.edit', $equipo) }}" class="btn btn-sm btn-outline-primary">Editar</a>

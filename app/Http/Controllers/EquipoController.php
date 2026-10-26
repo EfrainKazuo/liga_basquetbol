@@ -27,10 +27,12 @@ class EquipoController extends Controller
             ->with('success', 'Equipo creado correctamente.');
     }
 
-    public function show(Equipo $equipo)
-    {
-        return view('equipos.show', compact('equipo'));
-    }
+public function show(Equipo $equipo)
+{
+    $jugadores = $equipo->jugadores()->orderBy('numero_camiseta')->get();
+
+    return view('equipos.show', compact('equipo', 'jugadores'));
+}
 
     public function edit(Equipo $equipo)
     {
