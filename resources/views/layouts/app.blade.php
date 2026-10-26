@@ -20,6 +20,10 @@
                     <button type="submit" class="btn btn-outline-light btn-sm">Cerrar sesión</button>
                 </form>
             @endauth
+            @auth
+    <a class="nav-link text-white ms-3" href="{{ route('equipos.index') }}">Equipos</a>
+    <a class="nav-link text-white me-auto ms-3" href="{{ route('partidos.index') }}">Partidos</a>
+@endauth
         </div>
     </nav>
 
