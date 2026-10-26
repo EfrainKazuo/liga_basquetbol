@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\JugadorController;
+use App\Http\Controllers\PartidoController;
 
 Route::get('/', fn () => redirect()->route('dashboard'));
 
@@ -19,7 +20,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
     Route::resource('equipos.jugadores', JugadorController::class)
+    
     ->shallow()
     ->except(['index', 'show'])
     ->parameters(['jugadores' => 'jugador']);
+    Route::resource('partidos', PartidoController::class)->except('show');
 });
