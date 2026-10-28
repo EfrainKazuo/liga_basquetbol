@@ -1,0 +1,201 @@
+[data-bs-theme="dark"] {
+    --liga-bg: #0b0f14;
+    --liga-surface: #121821;
+    --liga-surface-2: #1a2230;
+    --liga-border: #263042;
+    --liga-accent: #f97316;
+    --liga-accent-dark: #ea580c;
+    --liga-muted: #8b97a8;
+
+    --bs-body-bg: var(--liga-bg);
+    --bs-body-color: #e5e9f0;
+    --bs-border-color: var(--liga-border);
+    --bs-secondary-color: var(--liga-muted);
+    --bs-tertiary-bg: var(--liga-surface-2);
+    --bs-link-color: var(--liga-accent);
+    --bs-link-hover-color: #fb923c;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: radial-gradient(1200px 500px at 50% -200px, #18202d 0%, var(--liga-bg) 70%) no-repeat, var(--liga-bg);
+    min-height: 100vh;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6, .display-6, .navbar-brand {
+    font-family: 'Barlow Condensed', 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-weight: 700;
+}
+h3 {
+    padding-left: .75rem;
+    border-left: 4px solid var(--liga-accent);
+    color: #fff;
+}
+h6 {
+    color: var(--liga-muted);
+    font-size: .8rem;
+    letter-spacing: .12em;
+}
+
+/* Menú */
+.liga-navbar {
+    background: #070a0e;
+    border-bottom: 2px solid var(--liga-accent);
+}
+.liga-navbar .navbar-brand {
+    font-size: 1.4rem;
+    color: #fff;
+}
+.liga-navbar .navbar-brand span { color: var(--liga-accent); }
+.liga-navbar .nav-link {
+    color: var(--liga-muted);
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    padding: .5rem .9rem;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+}
+.liga-navbar .nav-link:hover { color: #fff; }
+.liga-navbar .nav-link.active {
+    color: #fff;
+    border-bottom-color: var(--liga-accent);
+}
+
+/* Tarjetas */
+.card {
+    background: var(--liga-surface);
+    border: 1px solid var(--liga-border);
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .35);
+}
+.card-header {
+    background: var(--liga-surface-2) !important;
+    border-bottom: 1px solid var(--liga-border);
+    border-radius: 6px 6px 0 0 !important;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .85rem;
+}
+.card .display-6 {
+    color: var(--liga-accent);
+    font-size: 2.6rem;
+}
+.row > [class*="col-"] > .card.text-center { border-top: 3px solid var(--liga-accent); }
+
+/* Anulaciones de utilidades claras */
+.bg-white, .bg-light { background: var(--liga-surface-2) !important; }
+.text-dark { color: #111 !important; }
+.list-group-item {
+    background: transparent;
+    border-color: var(--liga-border);
+}
+
+/* Tablas */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-border-color: var(--liga-border);
+    --bs-table-hover-bg: var(--liga-surface-2);
+    --bs-table-hover-color: #fff;
+    margin-bottom: 0;
+}
+.table > :not(caption) > * > * { padding: .85rem 1rem; }
+.table-dark, .table-light {
+    --bs-table-bg: #070a0e;
+    --bs-table-color: #cbd5e1;
+    --bs-table-border-color: var(--liga-border);
+}
+.table thead th {
+    text-transform: uppercase;
+    font-size: .75rem;
+    letter-spacing: .1em;
+    font-weight: 600;
+    border-bottom: 2px solid var(--liga-accent);
+}
+.fila-lider td:first-child { border-left: 3px solid var(--liga-accent); }
+
+/* Insignias */
+.badge { border-radius: 4px; font-weight: 600; letter-spacing: .04em; }
+.badge.bg-dark { background: var(--liga-accent) !important; color: #111; }
+
+/* Botones */
+.btn {
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: .85rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+.btn-primary {
+    --bs-btn-bg: var(--liga-accent-dark);
+    --bs-btn-border-color: var(--liga-accent-dark);
+    --bs-btn-hover-bg: var(--liga-accent);
+    --bs-btn-hover-border-color: var(--liga-accent);
+    --bs-btn-active-bg: #c2410c;
+    --bs-btn-active-border-color: #c2410c;
+    --bs-btn-focus-shadow-rgb: 249, 115, 22;
+}
+.btn-outline-primary {
+    --bs-btn-color: var(--liga-accent);
+    --bs-btn-border-color: var(--liga-accent-dark);
+    --bs-btn-hover-bg: var(--liga-accent-dark);
+    --bs-btn-hover-border-color: var(--liga-accent-dark);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-bg: var(--liga-accent-dark);
+    --bs-btn-active-border-color: var(--liga-accent-dark);
+}
+.btn-outline-secondary {
+    --bs-btn-color: #cbd5e1;
+    --bs-btn-border-color: #475569;
+    --bs-btn-hover-bg: #334155;
+    --bs-btn-hover-border-color: #475569;
+    --bs-btn-hover-color: #fff;
+}
+
+/* Formularios */
+.form-control, .form-select {
+    background-color: var(--liga-surface-2);
+    border: 1px solid var(--liga-border);
+    border-radius: 4px;
+}
+.form-control:focus, .form-select:focus {
+    background-color: var(--liga-surface-2);
+    border-color: var(--liga-accent);
+    box-shadow: 0 0 0 .2rem rgba(249, 115, 22, .2);
+}
+.form-label {
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--liga-muted);
+    font-weight: 600;
+}
+
+/* Alertas y paginación */
+.alert { border-radius: 4px; }
+.page-link {
+    background: var(--liga-surface);
+    border-color: var(--liga-border);
+    color: var(--liga-accent);
+}
+.page-link:hover { background: var(--liga-surface-2); }
+.page-item.active .page-link {
+    background: var(--liga-accent-dark);
+    border-color: var(--liga-accent-dark);
+    color: #fff;
+}
+
+/* Pie de página */
+.liga-footer {
+    color: var(--liga-muted);
+    font-size: .8rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--liga-border);
+    margin-top: 2rem;
+}
